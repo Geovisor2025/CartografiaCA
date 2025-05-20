@@ -21,13 +21,14 @@
   background-image: url('images/fondo.png');
   background-size: cover;
   background-position: center;
-  height: 100%;
+  height: 100vh; /* Cambia de 100% a 100vh para altura total del viewport */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* ⬅️ Añade esto para centrar verticalmente */
   text-align: center;
   padding: 20px;
-  position: relative; /* necesario para que los hijos con position: absolute funcionen */
+  position: relative;
 }
 
     h1 {
