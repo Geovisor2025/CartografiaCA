@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIDAD DE CARTOGRAFÍA - 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+.background {
+  background-image: url('images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative; /* necesario para que los hijos con position: absolute funcionen */
+}
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5em;
+      color: #ffffff;
+      text-shadow: 4px 4px 10px rgba(0,0,0,0.8);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      font-size: 1.7em;
+      color: #f0f0f0;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+.dynamic-image {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: auto;       /* que no restrinja ancho */
+  height: auto;      /* que no restrinja alto */
+  max-width: 250px;  /* tamaño máximo deseado para escalarla */
+  border-radius: 15px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.dynamic-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+    .container {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .section {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      flex: 1 1 300px;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 1.5em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* corrige el error y centra horizontalmente */
+  width: 100%;
+}
+
+    .dropdown {
+  position: relative;
+  display: block; /* cambio clave */
+  width: 100%;    /* se ajusta al ancho del contenedor */
+}
+
+.dropdown-button {
+  width: 100%;    /* para ocupar todo el ancho */
+  background: linear-gradient(135deg, #f44336, #64b5f6);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  text-align: center; /* centrado del texto */
+}
+
+  
+
+.dropdown-content {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  max-height: 500px; /* suficiente para mostrar enlaces */
+}
+    .dropdown-content a {
+  color: #1e3a8a;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+  border-bottom: 1px solid #dbeafe;
+}
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0f2fe;
+      color: #0c4a6e;
+      transform: translateX(4px);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .buttons a.other-button {
+      width: 100%;  
+      background: linear-gradient(135deg, #f44336, #64b5f6);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .buttons a.other-button:hover {
+      background: linear-gradient(135deg, #f44336, #64b5f6);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <h1>UNIDAD DE CARTOGRAFÍA - 2025</h1>
+    <h2>CENSO AGROPECUARIO</h2>
+
+
+
+    <div class="container">
+      <!-- Sección izquierda -->
+      <div class="section">
+        <h3>Cartografía ABAS</h3>
+        <div class="buttons">
+          <div class="dropdown">
+            <button class="dropdown-button">Geovisores</button>
+            <div class="dropdown-content">
+              <a href="https://geovisor2025.github.io/MarcoMultiple/" target="_blank">Marco Multiple</a>
+              <a href="https://geovisor2025.github.io/MonitoreoBoleta/" target="_blank">Monitoreo Boleta</a>
+            </div>
+          </div>
+          <a class="other-button" href="https://drive.google.com/file/d/1QG1hToFfMT4VvofY0mB3gKEH99t5Wjz1/view?usp=sharing" target="_blank">Mapas Generados</a>
+          <a class="other-button" href="https://www.canva.com/design/DAGcSoCVzLQ/T9g-8Qjeg6QsJPlerRNSnA/edit" target="_blank">Ver Presentación</a>
+          <a class="other-button" href="files/control.xlsx" download>Seguimiento</a>
+        </div>
+      </div>
+
+      <!-- Sección derecha -->
+      <div class="section">
+        <h3>Imágenes Satelitales y Vías</h3>
+        <div class="buttons">
+            <div class="dropdown">
+            <button class="dropdown-button">Geovisores</button>
+            <div class="dropdown-content">
+              <a href="https://geovisor2025.github.io/ClasificacionSupervisada/" target="_blank">Clasificación Supervisada</a>
+              <a href="https://geovisor2025.github.io/RutasOptimasCA/" target="_blank">Rutas Óptimas</a>
+            </div>
+          </div>
+
+            <div class="dropdown">
+            <button class="dropdown-button">Mapas Generados</button>
+            <div class="dropdown-content">
+              <a href="https://drive.google.com/file/d/1E6wIa44-OnouNDDUPSeH3JSRKbpFFHOX/view?usp=drive_link" target="_blank">Clasificación Supervisada</a>
+              <a href="https://drive.google.com/file/d/1VadZYawrjcMHrajl8Wk8El64M_JV52Df/view?usp=sharing" target="_blank">Clasificación Áreas Cultivables</a>
+            </div>
+          </div>
+
+          <a class="other-button" href="https://www.canva.com/design/DAGcSoCVzLQ/T9g-8Qjeg6QsJPlerRNSnA/edit" target="_blank">Ver Presentación</a>
+          <a class="other-button" href="files/control1.xlsx" download>Seguimiento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<a href="https://www.figma.com/proto/x3fafFs2teFrGVNrMX7tgW/Agropecuario_v1?node-id=255-88" target="_blank">
+  <img src="images/portal.png" alt="Banner interactivo" class="dynamic-image">
+</a>
+
+</body>
+</html>
+
