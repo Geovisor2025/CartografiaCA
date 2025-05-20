@@ -62,11 +62,14 @@
   box-shadow: 0 5px 12px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10; /* nuevo */
 }
 
 .dynamic-image:hover {
-  transform: scale(2.03);
+  transform: scale(1.8);
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  z-index: 20; /* eleva la imagen por encima de todo */
 }
 
     .container {
@@ -214,7 +217,12 @@
       </div>
 
 
-
+ <!-- Imagen dinámica centrada horizontalmente -->
+  <div class="image-wrapper">
+    <a href="https://www.figma.com/proto/x3fafFs2teFrGVNrMX7tgW/Agropecuario_v1?node-id=255-88" target="_blank">
+      <img src="images/portal.png" alt="Banner interactivo" class="dynamic-image">
+    </a>
+  </div>
 
       <!-- Sección derecha -->
       <div class="section">
@@ -242,14 +250,5 @@
       </div>
     </div>
   </div>
- <!-- Imagen dinámica centrada horizontalmente -->
-  <div class="image-wrapper">
-    <a href="https://www.figma.com/proto/x3fafFs2teFrGVNrMX7tgW/Agropecuario_v1?node-id=255-88" target="_blank">
-      <img src="images/portal.png" alt="Banner interactivo" class="dynamic-image">
-    </a>
-  </div>
-
-  
 </body>
 </html>
-
