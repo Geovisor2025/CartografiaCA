@@ -47,18 +47,20 @@
       text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
 
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dynamic-image {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: auto;       /* que no restrinja ancho */
-  height: auto;      /* que no restrinja alto */
-  max-width: 250px;  /* tamaño máximo deseado para escalarla */
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   border-radius: 15px;
   box-shadow: 0 5px 12px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 10;
 }
 
 .dynamic-image:hover {
@@ -209,6 +211,14 @@
           <a class="other-button" href="files/control.xlsx" download>Seguimiento</a>
         </div>
       </div>
+
+
+ <!-- Imagen dinámica centrada horizontalmente -->
+  <div class="image-wrapper">
+    <a href="https://www.figma.com/proto/x3fafFs2teFrGVNrMX7tgW/Agropecuario_v1?node-id=255-88" target="_blank">
+      <img src="images/portal.png" alt="Banner interactivo" class="dynamic-image">
+    </a>
+  </div>
 
       <!-- Sección derecha -->
       <div class="section">
